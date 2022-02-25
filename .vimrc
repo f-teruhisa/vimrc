@@ -93,11 +93,28 @@ let g:plug_timeout = 300    " YouCompleteMeはコンパイルに時間がかか�
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'sjl/gundo.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-test/vim-test'
 Plug 'vim-syntastic/syntastic'
 Plug 'NLKNguyen/papercolor-theme'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+
+" Ruby
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+Plug 'w0rp/ale'
+
+" HTML
+Plug 'mattn/emmet-vim'
+Plug 'alvan/vim-closetag'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
+
 call plug#end()
 
 " vim-plugがまだインストールされていなければインストールする
@@ -121,9 +138,20 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_python_pylint_exe = 'pylint3'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Powerline
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
+
+" RSense
+let g:rsenseHome = expand("/Users/$USER/.rbenv/shims/rsense")
+let g:rsenseUseOmniFunc = 1
+
+" Terraform
+let g:terraform_fmt_on_save = 1 " ファイル保存時の自動フォーマットを有効にする
 
